@@ -3,15 +3,16 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text */
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #000000; /* Black header */
+    color: #ffffff;
     padding: 1rem 0;
     text-align: center;
+    border-bottom: 1px solid #3a3a3a; /* Subtle border */
 }
 
 header h1 {
@@ -23,9 +24,10 @@ main {
     max-width: 800px;
     margin: 2rem auto;
     padding: 1.5rem;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    background-color: #2a2a2a; /* Darker content background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Adjusted shadow for dark theme */
+    border-radius: 8px; /* Slightly more rounded */
+    border: 1px solid #3a3a3a; /* Subtle border */
 }
 
 .form-group {
@@ -36,15 +38,18 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: #cccccc; /* Lighter label text */
 }
 
 input[type="text"],
 textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ccc;
+    border: 1px solid #555555; /* Darker border */
     border-radius: 4px;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box;
+    background-color: #333333; /* Dark input background */
+    color: #e0e0e0; /* Light input text */
 }
 
 textarea {
@@ -55,7 +60,8 @@ button[type="submit"],
 #optimize-button,
 .copy-button {
     display: inline-block;
-    background-color: #5cb85c;
+    /* background-color: #0d6efd; */ /* Bootstrap blue */
+    background-color: #28a745; /* Darker Green */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -65,37 +71,37 @@ button[type="submit"],
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover,
-#optimize-button:hover,
-.copy-button:hover {
-    background-color: #4cae4c;
+button[type="submit"]:hover {
+    /* background-color: #0b5ed7; */
+     background-color: #218838; /* Darker hover green */
 }
 
 #optimize-button {
-    background-color: #f0ad4e;
+    background-color: #ffc107; /* Bootstrap yellow */
+    color: #000; /* Dark text for yellow button */
     margin-top: 1.5rem;
 }
 
 #optimize-button:hover {
-    background-color: #ec971f;
+    background-color: #ffca2c;
 }
 
 .copy-button {
-    background-color: #337ab7;
+    background-color: #6c757d; /* Bootstrap secondary grey */
     margin-left: 10px;
     padding: 5px 10px;
     font-size: 0.9rem;
 }
 
 .copy-button:hover {
-    background-color: #286090;
+    background-color: #5c636a;
 }
 
 
 #results-section {
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #444444; /* Darker border */
 }
 
 #score-container {
@@ -111,7 +117,7 @@ button[type="submit"]:hover,
 #score-bar-container {
     width: 80%;
     height: 20px;
-    background-color: #e0e0e0;
+    background-color: #444444; /* Darker container background */
     border-radius: 10px;
     margin: 0.5rem auto;
     overflow: hidden; /* Ensure the inner bar stays within bounds */
@@ -120,8 +126,8 @@ button[type="submit"]:hover,
 #score-bar {
     height: 100%;
     width: 0%; /* Initial width, will be set by JS */
-    background-color: #5cb85c; /* Green for good score */
-    border-radius: 10px 0 0 10px;
+    background-color: #198754; /* Default to good score color (Bootstrap green) */
+    border-radius: 10px; /* Full radius now */
     transition: width 0.5s ease-in-out;
 }
 
@@ -140,7 +146,7 @@ button[type="submit"]:hover,
 #checks-list li,
 #recommendations-list li {
     padding: 0.75rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444444; /* Darker border */
 }
 
 #checks-list li:last-child,
@@ -148,15 +154,15 @@ button[type="submit"]:hover,
     border-bottom: none;
 }
 
-.result-Pass { color: green; font-weight: bold; }
-.result-Fail { color: red; font-weight: bold; }
-.result-Warning { color: orange; font-weight: bold; }
+.result-Pass { color: #28a745; font-weight: bold; } /* Brighter Green */
+.result-Fail { color: #dc3545; font-weight: bold; } /* Bootstrap Red */
+.result-Warning { color: #ffc107; font-weight: bold; } /* Bootstrap Yellow */
 
 .suggestion {
     margin-bottom: 1rem;
-    background-color: #f9f9f9;
+    background-color: #333333; /* Dark background */
     padding: 1rem;
-    border: 1px solid #eee;
+    border: 1px solid #444444; /* Darker border */
     border-radius: 4px;
 }
 
@@ -165,13 +171,15 @@ button[type="submit"]:hover,
 }
 
 .suggestion textarea {
-    background-color: #fff; /* Ensure textarea is white */
+    background-color: #444444; /* Slightly lighter dark background */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #555555; /* Match other inputs */
     font-family: monospace;
 }
 
 .note {
     font-size: 0.9em;
-    color: #666;
+    color: #aaaaaa; /* Lighter grey for notes */
     margin-top: 1rem;
 }
 
@@ -187,9 +195,9 @@ button[type="submit"]:hover,
 }
 
 #error-message {
-    color: red;
-    background-color: #fdd;
-    border: 1px solid red;
+    color: #f8d7da; /* Light red text */
+    background-color: #5c1a1a; /* Dark red background */
+    border: 1px solid #8b2a2a; /* Darker red border */
     border-radius: 4px;
 }
 
@@ -200,9 +208,10 @@ button[type="submit"]:hover,
     margin-top: 0.5rem;
     max-height: 200px;
     overflow-y: auto;
-    background-color: #fff;
+    background-color: #333333; /* Dark background */
+    color: #f8d7da; /* Light red text */
     padding: 0.5rem;
-    border: 1px solid #eee;
+    border: 1px solid #444444; /* Darker border */
 }
 
 
@@ -210,6 +219,6 @@ footer {
     text-align: center;
     margin-top: 2rem;
     padding: 1rem 0;
-    color: #777;
+    color: #888888; /* Lighter grey footer text */
     font-size: 0.9em;
 }

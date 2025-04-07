@@ -1,4 +1,5 @@
 require('dotenv').config(); // Load environment variables from .env file
+console.log('Attempting to load GEMINI_API_KEY:', process.env.GEMINI_API_KEY ? 'Found' : 'Not Found'); // Add this line
 const express = require('express');
 const cors = require('cors');
 const cheerio = require('cheerio');
@@ -432,7 +433,7 @@ app.post('/optimize', async (req, res) => {
         // Optional: Get first paragraph for more context
         const firstParagraph = $('p').first().text().trim().substring(0, 200); // Limit context size
 
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" }); // Use latest recommended model
 
         // --- Prompts for Gemini ---
         const titlePrompt = `Generate an SEO-optimized title tag for a web page.
@@ -463,6 +464,7 @@ app.post('/optimize', async (req, res) => {
         const suggestedTitle = extractGeminiText(titleResult);
         const suggestedMetaDescription = extractGeminiText(metaDescriptionResult);
 
+        // Check if either suggestion failed
         if (!suggestedTitle || !suggestedMetaDescription) {
              console.error("Failed to extract text from one or both Gemini responses.");
              // Provide partial results if possible, or a general error
