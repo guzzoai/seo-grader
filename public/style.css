@@ -1,0 +1,215 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button[type="submit"],
+#optimize-button,
+.copy-button {
+    display: inline-block;
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover,
+#optimize-button:hover,
+.copy-button:hover {
+    background-color: #4cae4c;
+}
+
+#optimize-button {
+    background-color: #f0ad4e;
+    margin-top: 1.5rem;
+}
+
+#optimize-button:hover {
+    background-color: #ec971f;
+}
+
+.copy-button {
+    background-color: #337ab7;
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+.copy-button:hover {
+    background-color: #286090;
+}
+
+
+#results-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+#score-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#score {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#score-bar-container {
+    width: 80%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    overflow: hidden; /* Ensure the inner bar stays within bounds */
+}
+
+#score-bar {
+    height: 100%;
+    width: 0%; /* Initial width, will be set by JS */
+    background-color: #5cb85c; /* Green for good score */
+    border-radius: 10px 0 0 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+#checks-container,
+#recommendations-container,
+#optimization-suggestions {
+    margin-bottom: 1.5rem;
+}
+
+#checks-list,
+#recommendations-list {
+    list-style: none;
+    padding: 0;
+}
+
+#checks-list li,
+#recommendations-list li {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+#checks-list li:last-child,
+#recommendations-list li:last-child {
+    border-bottom: none;
+}
+
+.result-Pass { color: green; font-weight: bold; }
+.result-Fail { color: red; font-weight: bold; }
+.result-Warning { color: orange; font-weight: bold; }
+
+.suggestion {
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.suggestion label {
+    margin-bottom: 0.5rem;
+}
+
+.suggestion textarea {
+    background-color: #fff; /* Ensure textarea is white */
+    font-family: monospace;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading-indicator,
+#error-message {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+#error-message {
+    color: red;
+    background-color: #fdd;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+#error-details {
+    text-align: left;
+    white-space: pre-wrap; /* Wrap long error messages */
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 0.5rem;
+    border: 1px solid #eee;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    color: #777;
+    font-size: 0.9em;
+}

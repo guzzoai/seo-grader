@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Grader & Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SEO Grader & Optimizer</h1>
+        <p>Paste your HTML code and provide a primary keyword to analyze its on-page SEO.</p>
+    </header>
+
+    <main>
+        <form id="seo-form">
+            <div class="form-group">
+                <label for="keyword">Primary Keyword:</label>
+                <input type="text" id="keyword" name="keyword" required placeholder="e.g., javascript frameworks">
+            </div>
+            <div class="form-group">
+                <label for="htmlContent">HTML Content:</label>
+                <textarea id="htmlContent" name="htmlContent" rows="15" required placeholder="Paste your full HTML code here..."></textarea>
+            </div>
+            <button type="submit" id="analyze-button">Analyze SEO</button>
+        </form>
+
+        <section id="results-section" class="hidden">
+            <h2>Analysis Results</h2>
+            <div id="score-container">
+                <h3>Overall Score: <span id="score">--</span>/100</h3>
+                <div id="score-bar-container">
+                    <div id="score-bar"></div>
+                </div>
+            </div>
+
+            <div id="checks-container">
+                <h3>Detailed Checks:</h3>
+                <ul id="checks-list">
+                    <!-- Check results will be populated here -->
+                </ul>
+            </div>
+
+            <div id="recommendations-container">
+                <h3>Recommendations:</h3>
+                <ul id="recommendations-list">
+                    <!-- Recommendations will be populated here -->
+                </ul>
+            </div>
+
+            <button id="optimize-button" class="hidden">Suggest Optimizations (Title & Meta)</button>
+
+            <div id="optimization-suggestions" class="hidden">
+                <h3>Optimization Suggestions:</h3>
+                <div class="suggestion">
+                    <label>Suggested Title:</label>
+                    <textarea id="suggested-title" rows="2" readonly></textarea>
+                    <button class="copy-button" data-target="suggested-title">Copy</button>
+                </div>
+                <div class="suggestion">
+                    <label>Suggested Meta Description:</label>
+                    <textarea id="suggested-meta-description" rows="4" readonly></textarea>
+                    <button class="copy-button" data-target="suggested-meta-description">Copy</button>
+                </div>
+                <p class="note">Note: Always review AI-generated suggestions before implementing them.</p>
+            </div>
+        </section>
+
+        <div id="loading-indicator" class="hidden">
+            <p>Analyzing...</p>
+            <!-- Add a spinner or animation later if desired -->
+        </div>
+
+        <div id="error-message" class="hidden">
+            <p>An error occurred. Please check your input or try again later.</p>
+            <pre id="error-details"></pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>SEO Grader - Built with Node.js & Gemini</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
